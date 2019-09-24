@@ -18,13 +18,12 @@ app.post('/', (req, res) => {
 })
 
 app.post('/tambah', (req, res) => {
-    let a, b, c
-    /**
-     * Data type of variable a & b must be number, not string
-     */
+    let a, b, c, d
+
     a = parseInt(req.body.a)
     b = parseInt(req.body.b)
-    c = a + b
+    c = parseInt(req.body.c)
+    d = a + b + c
 
     /**
      * Check data type of all variable
@@ -32,10 +31,124 @@ app.post('/tambah', (req, res) => {
     console.log(typeof a)
     console.log(typeof b)
     console.log(typeof c)
+    console.log(typeof d)
+
     
-    return res.send(`The result value is ${c}`)
+    return res.send(`The result value is ${d}`)
 })
 
+app.post('/bagi', (req, res) => {
+    let a, b, c, d
+    /**
+     * Data type of variable a & b must be number, not string
+     */
+    a = parseInt(req.body.a)
+    b = parseInt(req.body.b)
+    c = parseInt(req.body.c)
+
+    d = a + b / c
+
+    /**
+     * Check data type of all variable
+     */
+    console.log(typeof a)
+    console.log(typeof b)
+    console.log(typeof c)
+    console.log(typeof d)
+    
+    return res.send(`The result value is ${d}`)
+})
+
+app.post('/kurang', (req, res) => {
+    let a, b, c, d
+    /**
+     * Data type of variable a & b must be number, not string
+     */
+    a = parseInt(req.body.a)
+    b = parseInt(req.body.b)
+    c = parseInt(req.body.c)
+    d = parseInt(req.body.d)
+
+
+    d = a - b - c
+
+    /**
+     * Check data type of all variable
+     */
+    console.log(typeof a)
+    console.log(typeof b)
+    console.log(typeof c)
+    console.log(typeof d)
+    
+    return res.send(`The result value is ${d}`)
+})
+
+app.post('/kali', (req, res) => {
+    let a, b, c, d
+    /**
+     * Data type of variable a & b must be number, not string
+     */
+    a = parseInt(req.body.a)
+    b = parseInt(req.body.b)
+    c = parseInt(req.body.c)
+    d = a * b * c
+
+    /**
+     * Check data type of all variable
+     */
+    console.log(typeof a)
+    console.log(typeof b)
+    console.log(typeof c)
+    console.log(typeof d)
+
+    
+    return res.send(`The result value is ${d}`)
+})
+
+app.post('/kasus', (req, res) => {
+    let a, b, c, d
+    /**
+     * Data type of variable a & b must be number, not string
+     */
+    a = parseInt(req.body.a)
+    b = parseInt(req.body.b)
+    c = parseInt(req.body.c)
+    d = a * b / c
+
+    /**
+     * Check data type of all variable
+     */
+    console.log(typeof a)
+    console.log(typeof b)
+    console.log(typeof c)
+    console.log(typeof d)
+
+    if(d%2 == 0){
+        return res.send(`Bilangan ${d}, adalah bilangan Genap`)
+    }else{
+        return res.send(`Bilangan ${d}, adalah bilangan Ganjil`)
+    }
+})
+
+// app.post('/kasus'), (req, res) => {
+//     let a, b, c, d
+
+//     a = parseInt(req.body.a)
+//     b = parseInt(req.body.b)
+//     c = parseInt(req.body.c)
+//     d = a + b * c
+
+//     // if(nilai%2 == 0){
+//     //     return res.send(`Bilangan ${d}, adalah bilangan Genap`)
+//     // }else{
+//     //     return res.send(`Bilangan ${d}, adalah bilangan Ganjil`)
+//     // }
+
+//         return res.send(`Bilangan ${d}, adalah bilangan Ganjil`)
+
+
+// }
+
 app.listen(8080, () => {
-    console.log(`Example app listening on port 3300`)
+    console.log(`Example app listening on port 8080`)
 })

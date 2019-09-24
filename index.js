@@ -130,25 +130,6 @@ app.post('/kasus', (req, res) => {
     }
 })
 
-// app.post('/kasus'), (req, res) => {
-//     let a, b, c, d
-
-//     a = parseInt(req.body.a)
-//     b = parseInt(req.body.b)
-//     c = parseInt(req.body.c)
-//     d = a + b * c
-
-//     // if(nilai%2 == 0){
-//     //     return res.send(`Bilangan ${d}, adalah bilangan Genap`)
-//     // }else{
-//     //     return res.send(`Bilangan ${d}, adalah bilangan Ganjil`)
-//     // }
-
-//         return res.send(`Bilangan ${d}, adalah bilangan Ganjil`)
-
-
-// }
-
 app.listen(8080, () => {
     console.log(`Example app listening on port 8080`)
 })

@@ -130,6 +130,8 @@ app.post('/kasus', (req, res) => {
     }
 })
 
+console.log('berubah')
+
 app.listen(8080, () => {
     console.log(`Example app listening on port 8080`)
 })

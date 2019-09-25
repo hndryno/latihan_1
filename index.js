@@ -72,6 +72,29 @@ app.get("/task-2", (req, res) => {
     return res.send(result);
 });
 
+app.get("/task-3", (req, res) => {
+    let alpha = ["hendriyono", "joko", "tosikin", "yosh", "tiara", "soni"];
+    console.log("Sebelum diurutkan", alpha);
+
+    let result = array_sort.descending_test(alpha);
+    console.log("Sesudah diurutkan", result);
+
+
+    return res.send(array_lib(result));
+});
+
+app.post("/task-4", (req, res) => {
+    
+    let alpha = ["Hendriyono", "Joko", "Tosikin", "Yosh", "Tiara", "Soni"];
+    console.log("Sebelum dipost", alpha)
+    
+    let tambah = req.body.tambah
+    let hasil = alpha.concat(tambah)
+    let berhasil = array_sort.descending_test(hasil)
+
+    return res.send(`sebelum ditambahkan = ${alpha} ,setelah ditambahkan = ${berhasil}`)
+});
+
 app.use("/array", array_routes);
 
 app.listen(8080, () => {

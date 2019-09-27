@@ -45,6 +45,8 @@ app.get("/loop-foreach", (req, res) => {
 app.get('/loop-map', (req, res) => {
     let data = ['merah', 'kuning', 'hijau']
     let result = loop_map(data)
+
+    return res.send(result)
 })
 
 app.get('/object-loop', (req, res) => {
@@ -64,6 +66,15 @@ app.get('/object-loop', (req, res) => {
     ]
 
     let result = map_object(data)
+
+    return res.send(result)
+})
+
+app.post('/loop-add', (req, res) => {
+    let array = []
+    let nama = req.body.nama
+    let result = array.concat(nama)
+    console.log(result)
 
     return res.send(result)
 })
